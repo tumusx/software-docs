@@ -1,0 +1,11 @@
+@startuml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(user, "Person", "A user of the calendar system")
+System(system_calendar, "Calendar System", "A system to manage calendar events and notify users")
+System_Ext(google_api_calendar, "Google Calendar API", "A third-party API to manage calendar events")
+Rel(user, system_calendar, "Uses")
+Rel(system_calendar, google_api_calendar, "Receive events when search new events")
+@enduml
