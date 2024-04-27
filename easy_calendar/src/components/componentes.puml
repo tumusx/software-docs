@@ -5,13 +5,15 @@ LAYOUT_WITH_LEGEND()
 
 Container(mobileApp, "Mobile App", "Provides all the functionality to the users for visualize the events")
 rectangle "Components" {
-    Component(visualizeEvents, "Showing events", "Component: Mobile App", "Show all events of the user")
+    Component(visualizeEvents, "Show events", "Component: Mobile App", "Show all user events")
+    Component(saveEvents, "CRUD Events", "Component: Mobile App", "Create, Read, Update and Delete events into database")
     Component(login, "Login with Google Auth", "Component: Mobile App", "Allow users to login with Google Auth")
     Component(event_clock, "Clock Events", "Component: Mobile App", "Show events in a clock view and trigger notifications with sound")
 }
 
 Rel(mobileApp, visualizeEvents, "Makes API calls to", "Google Calendar API")
 Rel(mobileApp, event_clock, "Makes clocks with", "AlarmManager API")
+Rel(visualizeEvents, saveEvents, "Makes crud events", "ROOM Database")
 Rel(mobileApp, login, "Makes API calls to", "Google Auth API")
 
 @enduml

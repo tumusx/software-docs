@@ -1,6 +1,6 @@
 @startuml
-LAYOUT_WITH_LEGEND()
 !include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Component.puml
+LAYOUT_WITH_LEGEND()
 Person(user, "Person", "A user of the calendar system")
 rectangle "Allows users to view events" {
     Component(calendar, "Mobile App Android", "Show all events")
